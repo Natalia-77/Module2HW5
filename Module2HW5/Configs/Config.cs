@@ -1,4 +1,4 @@
-﻿namespace Module2HW5.Config
+﻿namespace Module2HW5.Configs
 {
     public class Config
     {
