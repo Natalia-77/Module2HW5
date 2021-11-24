@@ -1,0 +1,10 @@
+{
+  "LoggerConfig": {
+    "TimeFormat": "hh.mm.ss dd.MM.yyyy",
+    "FileName": "hh.mm.ss dd.MM.yyyy",
+    "DirectoryPath": "Logs/",
+    "FileExtension": ".txt",
+    "DirectoryCapacity": "3"
+  }
+
+}
