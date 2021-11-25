@@ -6,6 +6,8 @@ namespace Module2HW5
     {
         public static void Main(string[] args)
         {
+            var starter = new Application();
+            starter.Run();
         }
     }
 }

@@ -7,9 +7,9 @@ namespace Module2HW5.Service
 {
     public class FileService : IFileService
     {
-        private StreamWriter _streamWriter;
         private DirectoryInfo _directoryInfo;
         private int _capacity;
+        private string _path;
 
         public void InitStream(int capacity, string fileName, string fileExtention, string directoryPath)
         {
@@ -33,12 +33,17 @@ namespace Module2HW5.Service
                 }
             }
 
-            _streamWriter = new StreamWriter($"{directoryPath}{fileName}{fileExtention}", true);
+            var fullname = fileName + fileExtention;
+            var path = Path.Combine(directoryPath, fullname);
+            _path = path;
         }
 
         public void Write(string text)
         {
-            _streamWriter.WriteLine(text);
+            using (StreamWriter sw = File.AppendText(_path))
+            {
+                sw.WriteLine(text);
+            }
         }
     }
 }

@@ -10,7 +10,6 @@ namespace Module2HW5.Service
         private readonly IConfigService _configService;
         private readonly IFileService _fileService;
         private readonly LoggerConfig _loggerConfig;
-
         public LoggerService(IConfigService configService, IFileService fileService)
         {
             _configService = configService;
@@ -41,7 +40,7 @@ namespace Module2HW5.Service
             _fileService.Write(log);
         }
 
-        private void FileServiceStart()
+        public void FileServiceStart()
         {
             var name = DateTime.UtcNow.ToString(_loggerConfig.FileName);
             var extension = _loggerConfig.FileExtension;
