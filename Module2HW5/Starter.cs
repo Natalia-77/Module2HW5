@@ -19,11 +19,11 @@ namespace Module2HW5
 
         public void RunActions()
         {
-            for (var i = 0; i < 5; i++)
+            for (var i = 0; i < 100; i++)
             {
                 try
                 {
-                    var a = _rand.Next(1, 4);
+                    var a = _rand.Next(0, 3);
 
                     switch (a)
                     {
