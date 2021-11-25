@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using Module2HW5.Helper;
 using Module2HW5.Service.Abstractions;
 
 namespace Module2HW5.Service
@@ -20,8 +22,10 @@ namespace Module2HW5.Service
             else
             {
                 var files = _directoryInfo.GetFiles();
+
                 if (files.Length > _capacity)
                 {
+                    Array.Sort(files, new FileTimeCreateComparer());
                     for (var i = files.Length - 1; i >= 2; i--)
                     {
                         files[i].Delete();
